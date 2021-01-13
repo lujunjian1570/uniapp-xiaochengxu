@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "iconfont";
+  src: url('//at.alicdn.com/t/font_2325255_fintvm55u3a.ttf?t=1610523655808') format('truetype')
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconfalling:before {
+  content: "\e750";
+}
+
+.iconbrowse:before {
+  content: "\e666";
+}
+
+.iconclose:before {
+  content: "\e668";
+}
+
+.iconsearch:before {
+  content: "\e67d";
+}
+
+.iconshare:before {
+  content: "\e67e";
+}
+
+.iconscanning:before {
+  content: "\e67f";
+}
+
+.iconsetting:before {
+  content: "\e680";
+}
