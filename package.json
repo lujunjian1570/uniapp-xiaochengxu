@@ -39,7 +39,10 @@
     "test:h5": "cross-env UNI_PLATFORM=h5 jest -i",
     "test:ios": "cross-env UNI_PLATFORM=app-plus UNI_OS_NAME=ios jest -i",
     "test:mp-baidu": "cross-env UNI_PLATFORM=mp-baidu jest -i",
-    "test:mp-weixin": "cross-env UNI_PLATFORM=mp-weixin jest -i"
+    "test:mp-weixin": "cross-env UNI_PLATFORM=mp-weixin jest -i",
+    "lint:fix": "eslint --fix --ext .js,.vue src",
+    "stylelint:fix": "stylelint --fix \"**/*.{vue,less,postcss,css,scss}\"",
+    "clean": "rimraf yarn.lock && rimraf package.lock.json && rimraf node_modules"
   },
   "dependencies": {
     "@dcloudio/uni-app-plus": "^2.0.0-30520210106003",
@@ -75,12 +78,22 @@
     "@dcloudio/webpack-uni-pages-loader": "^2.0.0-30520210106003",
     "@vue/cli-plugin-babel": "~4.5.10",
     "@vue/cli-service": "~4.5.10",
+    "babel-eslint": "^10.1.0",
     "babel-plugin-import": "^1.11.0",
     "cross-env": "^7.0.2",
+    "eslint": "^7.17.0",
+    "eslint-plugin-vue": "^7.4.1",
+    "husky": "^4.3.7",
     "jest": "^26.6.3",
+    "lint-staged": "^10.5.3",
     "mini-types": "*",
     "miniprogram-api-typings": "3.2.1",
+    "node-sass": "^5.0.0",
     "postcss-comment": "^2.0.0",
+    "rimraf": "^3.0.2",
+    "sass-loader": "^10.1.1",
+    "stylelint": "^13.8.0",
+    "stylelint-config-standard": "^20.0.0",
     "vue-template-compiler": "^2.6.11"
   },
   "browserslist": [
@@ -89,5 +102,21 @@
   ],
   "uni-app": {
     "scripts": {}
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,vue}": [
+      "npm run lint:fix",
+      "git add"
+    ],
+    "*.{vue,less,postcss,css,scss}": [
+      "npm run stylelint:fix",
+      "git add"
+    ]
   }
 }
