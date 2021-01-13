@@ -13,6 +13,6 @@ export default {
 </script>
 
 <style lang="scss">
-  /* 引入字体图标库 */
-  @import url("@/style/iconfont/iconfont.css");
+  /* 全局样式 */
+  @import url("@/style/index.scss");
 </style>
