@@ -3,7 +3,6 @@ import '@/env/index.js'
 export default {
   onLaunch: function() {
     console.log('App Launch')
-    this.$store.dispatch('home/setUserInfo',{ userName: 'admin' })
   },
   onShow: function() {
     console.log('App Show')
