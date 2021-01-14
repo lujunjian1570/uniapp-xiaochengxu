@@ -67,6 +67,20 @@
             }
         }
     },
+    "h5" : {
+        "devServer" : {
+            "proxy" : {
+                "/test" : {
+                    "target" : "http://mockhttp.cn/mock/test",
+                    "changeOrigin" : true,
+                    "secure" : false,
+                    "pathRewrite" : {
+                        "^/test" : ""
+                    }
+                }
+            }
+        }
+    },
     "mp-alipay" : {
         "usingComponents" : true
     },

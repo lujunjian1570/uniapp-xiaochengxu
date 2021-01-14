@@ -1,7 +1,9 @@
 <script>
+import '@/env/index.js'
 export default {
   onLaunch: function() {
     console.log('App Launch')
+    this.$store.dispatch('home/setUserInfo',{ userName: 'admin' })
   },
   onShow: function() {
     console.log('App Show')
@@ -14,5 +16,5 @@ export default {
 
 <style lang="scss">
   /* 全局样式 */
-  @import url("@/style/index.scss");
+  @import "@/style/index.scss";
 </style>

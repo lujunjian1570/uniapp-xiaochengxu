@@ -1,3 +1,9 @@
+/**
+ * stylelint配置
+ * @author: Lujunjian
+ * @createTime: 2021-1-14 14:46:16
+ */
+
 // 官网：https://stylelint.io/
 // 中文官网：https://stylelint.cn/
 module.exports = {

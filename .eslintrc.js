@@ -1,3 +1,9 @@
+/**
+ * eslint配置
+ * @author: Lujunjian
+ * @createTime: 2021-1-14 14:35:44
+ */
+
 // eslint：http://eslint.cn/
 // eslint-plugin-vue：https://eslint.vuejs.org
 module.exports = {
@@ -17,7 +23,8 @@ module.exports = {
     uni: 'readonly',
     plus: 'readonly',
     wx: 'readonly',
-    getCurrentPages: 'readonly'
+    getCurrentPages: 'readonly',
+    getApp: 'readonly'
   },
   extends: [
     // eslint推荐规则
