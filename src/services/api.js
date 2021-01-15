@@ -4,7 +4,7 @@
  * @createTime: 2021-01-14 09:40:01
  */
 
-module.exports = {
+export default {
   get: '/getStr1', // 获取信息
 
 }

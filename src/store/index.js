@@ -15,11 +15,7 @@ import mine from '@/store/modules/mine.js'
 Vue.use(Vuex)
 
 const vuexPersisted = new createPersistedState({
-  storage: {
-    getItem: key => uni.getStorageSync(key),
-    setItem: (key, value) => uni.setStorageSync(key, value),
-    removeItem: key => uni.clearStorageSync(key)
-  }
+  storage: window.localStorage
 })
 
 const store = new Vuex.Store({

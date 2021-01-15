@@ -5,3 +5,21 @@
  */
 /* 引入字体图标库 */
 @import "@/style/iconfont/iconfont.css";
+page{
+  height: 100%;
+  word-break: break-all;
+  background-color: $uni-bg-color;
+}
+.line{
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.line2{
+  -webkit-line-clamp: 2;
+}
+.line3{
+  -webkit-line-clamp: 3;
+}

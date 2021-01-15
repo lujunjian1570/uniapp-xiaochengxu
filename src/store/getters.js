@@ -4,7 +4,6 @@
  * @createTime: 2021-1-14 14:08:11
  */
 
-const getters = {
+export default {
   userName: state => state.home.userInfo.userName + state.mine.str
 }
-export default getters

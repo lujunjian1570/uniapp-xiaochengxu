@@ -23,7 +23,7 @@
       <view class="title">
         userName：{{ userInfo.userName }}
       </view>
-      <view class="iconfont iconfalling" />
+      <view class="iconfont iconbrowse" />
     </view>
   </view>
 </template>
@@ -78,10 +78,6 @@ export default {
     height: 200rpx;
     width: 200rpx;
     margin: 200rpx auto 50rpx auto;
-  }
-  .text-area{
-    display: flex;
-    justify-content: center;
   }
   .title{
     font-size: 36rpx;

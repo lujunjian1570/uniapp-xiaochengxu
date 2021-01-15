@@ -9,7 +9,7 @@ import Vue from 'vue'
 const _this = Vue.prototype
 const baseUrl = process.uniEnv.BASE_API
 
-module.exports = {
+export default {
   post: function(url, data, hideLoading) {
     const $that = this
     if (!hideLoading) uni.showLoading({ title: '加载中' })
