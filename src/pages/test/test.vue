@@ -23,7 +23,16 @@
       <view class="title">
         userName：{{ userInfo.userName }}
       </view>
+      <view class="title">
+        {{ str }}
+      </view>
       <view class="iconfont iconbrowse" />
+      <button
+        type="default"
+        @click="clear"
+      >
+        清除缓存
+      </button>
     </view>
   </view>
 </template>
@@ -39,7 +48,8 @@ export default {
       NODE_ENV: process.env.NODE_ENV,
       BASE_API: process.uniEnv.BASE_API,
       userName1: this.$store.getters.userName,
-      userName2: this.$store.state.home.userInfo.userName
+      userName2: this.$store.state.home.userInfo.userName,
+      str: ''
     }
   },
   computed: {
@@ -55,14 +65,16 @@ export default {
     console.log(process.env)
     console.log(this.userInfo)
 
-    this.$utils.test()
+    // this.$utils.test()
 
-    this.$http.post(this.$api.get).then(res => {
-      console.log(res.str)
-    })
+    /* this.$http.post(this.$api.get).then(res => {
+      this.str = res.str
+    }) */
   },
   methods: {
-
+    clear() {
+      uni.clearStorageSync('key')
+    }
   }
 }
 </script>
