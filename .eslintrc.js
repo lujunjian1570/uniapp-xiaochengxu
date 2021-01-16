@@ -44,9 +44,11 @@ module.exports = {
   // 'warn' or 1 - 将规则作为警告打开
   // 'error' or 2 - 将规则作为错误打开
   rules: {
-    // props需要定义类型
+    // 禁止使用v-html
+    'vue/no-v-html': 0,
+    // props必须定义类型
     'vue/require-prop-types': 0,
-    // props需要默认值
+    // props必须有默认值
     'vue/require-default-prop': 0,
     // 强制使用一致的缩进风格（2个空格）
     'indent': [2, 2, {

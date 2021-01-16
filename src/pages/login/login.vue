@@ -44,9 +44,9 @@
 
 <script>
 /* import {
-		mapState,
-		mapMutations
-	} from 'vuex' */
+  mapState,
+  mapMutations
+} from 'vuex' */
 
 export default {
   data() {
