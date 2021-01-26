@@ -1,7 +1,7 @@
 /**
  * eslint配置
  * @author: Lujunjian
- * @createTime: 2021-1-14 14:35:44
+ * @createTime: 2021-01-14 14:35:44
  */
 
 // eslint：http://eslint.cn/

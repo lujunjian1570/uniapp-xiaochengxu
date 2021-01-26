@@ -1,7 +1,7 @@
 /**
  * stylelint配置
  * @author: Lujunjian
- * @createTime: 2021-1-14 14:46:16
+ * @createTime: 2021-01-14 14:46:16
  */
 
 // 官网：https://stylelint.io/
@@ -19,19 +19,9 @@ module.exports = {
     // 限制字符串使用双引号
     'string-quotes': 'double',
     // 禁止使用未知的伪类选择器
-    'selector-pseudo-class-no-unknown': [true,
-      {
-        // 项目中使用了:global，所以把global忽略掉
-        'ignorePseudoClasses': ['global']
-      }
-    ],
+    'selector-pseudo-class-no-unknown': null,
     // 禁止使用未知的伪元素选择器
-    'selector-pseudo-element-no-unknown': [true,
-      {
-        // 项目中使用了::v-deep，所以把v-deep忽略掉
-        'ignorePseudoElements': ['v-deep']
-      }
-    ],
+    'selector-pseudo-element-no-unknown': null,
     // 禁止在注释之前有空行
     'comment-empty-line-before': 'never',
     // 在规则之前禁止使用空行

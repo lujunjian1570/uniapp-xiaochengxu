@@ -2,5 +2,5 @@
 dist
 unpackage
 node_modules
-# 忽略uni-app官方的组件库错误和警告
+# 忽略uni-app官方的组件库
 src/components/uni-**
