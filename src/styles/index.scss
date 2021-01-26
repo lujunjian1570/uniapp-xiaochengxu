@@ -1,0 +1,67 @@
+/**
+ * 公共样式
+ * @author: Lujunjian
+ * @createTime: 2021-01-14 14:11:28
+ */
+/* 引入字体图标库 */
+@import "@/styles/iconfont/iconfont.css";
+page,
+view,
+scroll-view,
+swiper,
+swiper-item,
+movable-area,
+movable-view,
+cover-view,
+cover-image,
+icon,
+text,
+rich-text,
+progress,
+button,
+checkbox-group,
+checkbox,
+editor,
+form,
+input,
+label,
+picker,
+picker-view,
+radio-group,
+radio,
+slider,
+switch,
+textarea,
+navigator,
+functional-page-navigator,
+image,
+video,
+camera,
+audio,
+live-player,
+live-pusher,
+map,
+canvas,
+open-data,
+web-view,
+ad{
+  box-sizing: border-box;
+}
+page{
+  height: 100%;
+  word-break: break-all;
+  background-color: $uni-bg-color;
+}
+.line-one{
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.line-two{
+  -webkit-line-clamp: 2;
+}
+.line-three{
+  -webkit-line-clamp: 3;
+}

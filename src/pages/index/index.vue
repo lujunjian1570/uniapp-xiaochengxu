@@ -52,7 +52,7 @@ export default {
     }) */
 
     // this.$utils.toast(this.$store.getters.userName)
-    this.$store.dispatch('home/setUserInfo',{ userName: 'admin' })
+    this.$store.dispatch('user/setUserInfo',{ userName: 'admin' })
     // this.getInfo()
   },
   methods: {

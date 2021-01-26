@@ -19,9 +19,19 @@ module.exports = {
     // 限制字符串使用双引号
     'string-quotes': 'double',
     // 禁止使用未知的伪类选择器
-    'selector-pseudo-class-no-unknown': null,
+    'selector-pseudo-class-no-unknown': [true,
+      {
+        // 项目中使用了:global，所以把global忽略掉
+        'ignorePseudoClasses': ['global']
+      }
+    ],
     // 禁止使用未知的伪元素选择器
-    'selector-pseudo-element-no-unknown': null,
+    'selector-pseudo-element-no-unknown': [true,
+      {
+        // 项目中使用了::v-deep，所以把v-deep忽略掉
+        'ignorePseudoElements': ['v-deep']
+      }
+    ],
     // 禁止在注释之前有空行
     'comment-empty-line-before': 'never',
     // 在规则之前禁止使用空行
@@ -45,10 +55,9 @@ module.exports = {
     ],
     // 关闭 禁止未知属性
     'property-no-unknown': null,
-    // 禁用未知的类型选择器
-    'selector-type-no-unknown':[true,{
-      'ignoreTypes': ['page']
-    }],
+    // 关闭 禁用未知的类型选择器
+    'selector-type-no-unknown':null,
+    // 关闭 不允许在字体族名称列表中丢失泛型族
     'font-family-no-missing-generic-family-keyword': null
   }
 }

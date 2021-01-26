@@ -5,5 +5,5 @@
  */
 
 export default {
-  userName: state => state.home.userInfo.userName + state.mine.str
+  userName: state => state.user.userInfo.userName + state.mine.str
 }

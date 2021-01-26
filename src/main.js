@@ -1,7 +1,7 @@
 /**
  * main
  * @author: Lujunjian
- * @createTime: 2021-1-14 09:01:53
+ * @createTime: 2021-01-14 09:01:53
  */
 
 import Vue from 'vue'
