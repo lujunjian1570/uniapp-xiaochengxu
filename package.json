@@ -40,8 +40,8 @@
     "test:ios": "cross-env UNI_PLATFORM=app-plus UNI_OS_NAME=ios jest -i",
     "test:mp-baidu": "cross-env UNI_PLATFORM=mp-baidu jest -i",
     "test:mp-weixin": "cross-env UNI_PLATFORM=mp-weixin jest -i",
-    "lint:fix": "eslint --fix --ext .js,.vue src",
-    "stylelint:fix": "stylelint --fix \"src/**/*.{vue,less,postcss,css,scss}\"",
+    "eslint": "eslint --fix --ext .js,.vue src",
+    "stylelint": "stylelint --fix \"src/**/*.{vue,less,postcss,css,scss}\"",
     "clean": "rimraf yarn.lock && rimraf package.lock.json && rimraf node_modules"
   },
   "dependencies": {
@@ -112,11 +112,11 @@
   },
   "lint-staged": {
     "src/**/*.{js,vue}": [
-      "npm run lint:fix",
+      "npm run eslint",
       "git add"
     ],
     "*.{vue,less,postcss,css,scss}": [
-      "npm run stylelint:fix",
+      "npm run stylelint",
       "git add"
     ]
   }
