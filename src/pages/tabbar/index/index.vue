@@ -2,7 +2,15 @@
   <view class="cantainer">
     <view class="box">
       <echarts-pie :obj="cjjl" />
-      <uni-badge text="1" />
+    </view>
+    <view class="box">
+      <echarts-bar :obj="cqtj" />
+    </view>
+    <view class="box">
+      <echarts-pie :obj="ncjc" />
+    </view>
+    <view style="height: 1000rpx;">
+      1
     </view>
   </view>
 </template>
@@ -13,8 +21,8 @@ export default {
     return {
       // 晨检记录
       cjjl: {
-        text: '上报率',
-        subtext: '66.7%',
+        title: '上报率',
+        subtitle: '66.7%',
         data: [{
           value: 200,
           name: '已上报'
@@ -32,7 +40,7 @@ export default {
       // 农残检测
       ncjc: {
         title: '合格率',
-        percent: '80%',
+        subtitle: '80%',
         data: [{
           value: 400,
           name: '合格'
@@ -44,7 +52,7 @@ export default {
       // 卫生检查
       wsjc: {
         title: '合格率',
-        percent: '55%',
+        subtitle: '55%',
         data: [{
           value: 600,
           name: '合格'
@@ -56,7 +64,7 @@ export default {
       // 日常消费统计
       rcxftj: {
         title: '上报率',
-        percent: '9%',
+        subtitle: '9%',
         data: [{
           value: 10,
           name: '已上报'
@@ -74,7 +82,7 @@ export default {
       // 废弃物处理统计
       fqwcltj: {
         title: '上报率',
-        percent: '83.3%',
+        subtitle: '83.3%',
         data: [{
           value: 250,
           name: '已上报'

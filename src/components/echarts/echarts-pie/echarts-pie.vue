@@ -1,5 +1,8 @@
 <template>
-  <ec-canvas :ec="ec" />
+  <ec-canvas
+    :ec="ec"
+    force-use-old-canvas="true"
+  />
 </template>
 
 <script>
@@ -65,16 +68,9 @@ export default {
     }
   },
   onReady() {
-    this.ec.option.title.text = this.obj.text
-    this.ec.option.title.subtext = this.obj.subtext
+    this.ec.option.title.text = this.obj.title
+    this.ec.option.title.subtext = this.obj.subtitle
     this.ec.option.series[0].data = this.obj.data
   }
 }
 </script>
-
-<style lang="scss" scoped>
-  .uni-ec-canvas{
-    width: 100%;
-    height: 100%;
-  }
-</style>
