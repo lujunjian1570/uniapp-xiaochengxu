@@ -41,6 +41,16 @@
 
     }
   ],
+  "subPackages": [{
+    "root": "pages/subIndex",
+    "pages": [{
+      "path": "list/list",
+      "style": {
+        "navigationBarTitleText": "分包list",
+        "enablePullDownRefresh": false
+      }
+    }]
+  }],
   "globalStyle": {
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "食堂管理端",
@@ -74,7 +84,8 @@
   "easycom": {
     "autoscan": true, // 是否自动扫描组件
     "custom": { // 自定义扫描规则
-      "^uni-(.*)": "@/components/uni-$1.vue"
+      "^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue",
+      "^echarts-(.*)": "@/components/echarts/echarts-$1/echarts-$1.vue"
     }
   }
 }

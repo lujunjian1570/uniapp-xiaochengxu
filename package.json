@@ -41,7 +41,7 @@
     "test:mp-baidu": "cross-env UNI_PLATFORM=mp-baidu jest -i",
     "test:mp-weixin": "cross-env UNI_PLATFORM=mp-weixin jest -i",
     "lint:fix": "eslint --fix --ext .js,.vue src",
-    "stylelint:fix": "stylelint --fix \"**/*.{vue,less,postcss,css,scss}\"",
+    "stylelint:fix": "stylelint --fix \"src/**/*.{vue,less,postcss,css,scss}\"",
     "clean": "rimraf yarn.lock && rimraf package.lock.json && rimraf node_modules"
   },
   "dependencies": {
@@ -58,6 +58,7 @@
     "@dcloudio/uni-quickapp-native": "^2.0.0-29820201110001",
     "@dcloudio/uni-quickapp-webview": "^2.0.0-30520210106003",
     "@dcloudio/uni-stat": "^2.0.0-30520210106003",
+    "@dcloudio/uni-ui": "^1.2.10",
     "@vue/shared": "^3.0.5",
     "core-js": "^3.8.2",
     "flyio": "^0.6.2",
