@@ -85,7 +85,6 @@
     "autoscan": true, // 是否自动扫描组件
     "custom": { // 自定义扫描规则
       "^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue",
-      "^echarts-(.*)": "@/components/echarts/echarts-$1/echarts-$1.vue",
       "^ucharts-(.*)": "@/components/ucharts/ucharts-$1/ucharts-$1.vue"
     }
   }
