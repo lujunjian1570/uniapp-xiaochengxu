@@ -7,15 +7,35 @@
 </template>
 
 <script>
+/**
+   * 饼图圆环图组件
+   * @author: Lujunjian
+   * @createTime: 2021-1-28 15:39:10
+   * obj数据示例：
+   * {
+      title: '上报率',
+      subtitle: '66.7',
+      series: [{
+        data: 200,
+        name: '已上报'
+      }, {
+        data: 100,
+        name: '未上报'
+      }]
+    }
+   */
+
 import uCharts from '@/plugins/ucharts/u-charts.min.js'
 let _self
 export default {
+  props: {
+    obj: {}
+  },
   data() {
     return {
       cWidth: '',
       cHeight: '',
-      pixelRatio: 1,
-      serverData: ''
+      pixelRatio: 1
     }
   },
   mounted() {
@@ -26,16 +46,7 @@ export default {
   },
   methods: {
     getServerData() {
-      let Ring = {
-        'series': [{
-          'name': '已上报',
-          'data': 70
-        }, {
-          'name': '未上报',
-          'data': 30
-        }]
-      }
-      _self.showRing('canvasRing', Ring)
+      _self.showRing('canvasRing', this.obj)
     },
     showRing(canvasId, chartData) {
       for (let i = 0; i < chartData.series.length; i++) {
@@ -50,18 +61,18 @@ export default {
         legend: {
           // show: false
         },
-        fontSize: 11,
+        fontSize: 10,
         colors: ['#00CF83', '#FF4C51'],
         background: '#FFFFFF',
         title: {
-          name: '70%',
-          color: '#00CF83',
-          fontSize: 22,
+          name: chartData.title,
+          color: '#666',
+          fontSize: 10,
         },
         subtitle: {
-          name: '上报率',
-          color: '#666666',
-          fontSize: 11,
+          name: chartData.subtitle + '%',
+          color: parseFloat(chartData.subtitle) >= 50 ? '#00CF83' : '#FF4C51',
+          fontSize: 22,
         },
         pixelRatio: _self.pixelRatio,
         animation: true,

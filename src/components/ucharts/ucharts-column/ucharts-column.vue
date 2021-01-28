@@ -7,9 +7,30 @@
 </template>
 
 <script>
+/**
+   * 柱状图组件
+   * @author: Lujunjian
+   * @createTime: 2021-1-28 16:44:17
+   * obj数据示例：
+   * {
+      rotate: false, // true：横向的柱状图
+      title: '出勤统计',
+      categories: ['到岗', '轮休', '病假', '事假'],
+      series: [{
+        'data': [45, {
+          'value': 20,
+          'color': '#f04864'
+        }, 143, 34]
+      }]
+    }
+   */
+
 import uCharts from '@/plugins/ucharts/u-charts.min.js'
 let _self
 export default {
+  props: {
+    obj: {}
+  },
   data() {
     return {
       cWidth: '',
@@ -27,18 +48,7 @@ export default {
   },
   methods: {
     getServerData() {
-      let Column = {
-        title: '出勤统计',
-        categories: ['到岗', '轮休', '病假', '事假'],
-        series: [{
-          'name': '出勤',
-          'data': [15, {
-            'value': 20,
-            'color': '#f04864'
-          }, 143, 34]
-        }]
-      }
-      _self.showColumn('canvasColumn', Column)
+      _self.showColumn('canvasColumn', this.obj)
     },
     showColumn(canvasId, chartData) {
       new uCharts({
@@ -49,17 +59,29 @@ export default {
         legend: {
           show: false
         },
-        fontSize: 11,
+        fontSize: 10,
         background: '#FFFFFF',
         pixelRatio: _self.pixelRatio,
         animation: true,
+        rotate: chartData.rotate ? true : false,
         categories: chartData.categories,
         series: chartData.series,
         xAxis: {
+          // 不绘制Y轴网格(即默认绘制网格)
           disableGrid: true,
+          // 坐标轴刻度线是否显示
+          calibration: false
         },
         yAxis: {
-          disableGrid: true
+          // 不绘制Y轴网格(即默认绘制网格)
+          disableGrid: true,
+          data: [{
+            calibration: true,
+            position: chartData.rotate ? 'right' : 'left',
+            format: val => {
+              return val
+            }
+          }]
         },
         // dataLabel: true,
         width: _self.cWidth * _self.pixelRatio,
@@ -77,7 +99,7 @@ export default {
 
 <style>
   /* 样式的width和height一定要与定义的cWidth和cHeight相对应 */
-  .charts{
+  .charts {
     width: 375upx;
     height: 300upx;
     background-color: #fff;

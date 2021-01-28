@@ -1,6 +1,12 @@
 <template>
   <view class="cantainer">
-    <view style="height: 1500rpx;">
+    <view class="box">
+      <ucharts-ring :obj="cjjl" />
+    </view>
+    <view class="box">
+      <ucharts-column :obj="cqtj" />
+    </view>
+    <view style="height: 1000rpx;">
       1
     </view>
   </view>
@@ -10,7 +16,93 @@
 export default {
   data() {
     return {
-
+      // 晨检记录
+      cjjl: {
+        title: '上报率',
+        subtitle: '66.7',
+        series: [{
+          data: 200,
+          name: '已上报'
+        }, {
+          data: 100,
+          name: '未上报'
+        }]
+      },
+      // 出勤统计
+      cqtj: {
+        // rotate: true,
+        title: '出勤统计',
+        categories: ['到岗', '轮休', '病假', '事假'],
+        series: [{
+          'data': [
+            45, {
+              'value': 61,
+              'color': '#f04864'
+            },
+            72, 34
+          ]
+        }]
+      },
+      // 农残检测
+      ncjc: {
+        title: '合格率',
+        subtitle: '80%',
+        data: [{
+          value: 400,
+          name: '合格'
+        }, {
+          value: 100,
+          name: '不合格'
+        }]
+      },
+      // 卫生检查
+      wsjc: {
+        title: '合格率',
+        subtitle: '55%',
+        data: [{
+          value: 600,
+          name: '合格'
+        }, {
+          value: 500,
+          name: '不合格'
+        }]
+      },
+      // 日常消费统计
+      rcxftj: {
+        title: '上报率',
+        subtitle: '9%',
+        data: [{
+          value: 10,
+          name: '已上报'
+        }, {
+          value: 100,
+          name: '未上报'
+        }]
+      },
+      // 消毒方式排行榜
+      xdfsph: {
+        title: '消毒方式排行榜',
+        x: ['酒精', '红外线', '电离辐射', '高温蒸煮', '紫外线'],
+        data: [137, 111, 35, 155, 120]
+      },
+      // 废弃物处理统计
+      fqwcltj: {
+        title: '上报率',
+        subtitle: '83.3%',
+        data: [{
+          value: 250,
+          name: '已上报'
+        }, {
+          value: 50,
+          name: '未上报'
+        }]
+      },
+      // 垃圾处理统计
+      ljcltj: {
+        title: '垃圾处理统计',
+        x: ['干垃圾', '湿垃圾', '可回收', '有害'],
+        data: [110, 99, 45, 65]
+      }
     }
   },
   onLoad() {
