@@ -96,7 +96,7 @@ export default {
       }
     }
   },
-  onReady() {
+  mounted() {
     this.ec.option.title.text = this.obj.title
     this.ec.option.xAxis[0].data = this.obj.x
     this.ec.option.series[0].data = this.obj.data

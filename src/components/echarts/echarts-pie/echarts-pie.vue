@@ -67,7 +67,7 @@ export default {
       }
     }
   },
-  onReady() {
+  mounted() {
     this.ec.option.title.text = this.obj.title
     this.ec.option.title.subtext = this.obj.subtitle
     this.ec.option.series[0].data = this.obj.data
