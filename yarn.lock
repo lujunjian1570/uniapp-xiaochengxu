@@ -928,10 +928,10 @@
     pako "^1.0.11"
     safe-area-insets "^1.4.1"
 
-"@dcloudio/uni-helper-json@1.0.12":
-  version "1.0.12"
-  resolved "https://registry.yarnpkg.com/@dcloudio/uni-helper-json/-/uni-helper-json-1.0.12.tgz#1cfb6adbf778b36d8716b23fd9ff12f40b4137f0"
-  integrity sha512-h0IEklFdkxAnIp+jxBpeJHzZRgLv9CSPW/tzt+E4cHW2IqkJPkQYG78ib4EYY011LQOX46mmAbdJc5g7o/ovng==
+"@dcloudio/uni-helper-json@1.0.13":
+  version "1.0.13"
+  resolved "https://registry.yarnpkg.com/@dcloudio/uni-helper-json/-/uni-helper-json-1.0.13.tgz#4e8aa062daaefb30d98973c035a7b0ab628329c7"
+  integrity sha512-FO9Iu4zW4td3Tr+eiCDWuele2ehkJ4qxQ/UhpAMLjso+ZdWz6NagK5Syh6cdy1hoDqbxpNoqnLynuJXe81Ereg==
 
 "@dcloudio/uni-migration@^2.0.0-30720210122001":
   version "2.0.0-30720210122001"
