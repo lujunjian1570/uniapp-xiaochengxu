@@ -2,10 +2,10 @@
  * stylelint配置
  * @author: Lujunjian
  * @createTime: 2021-01-14 14:46:16
+ * 官网：https://stylelint.io/
+ * 中文官网：https://stylelint.cn/
  */
 
-// 官网：https://stylelint.io/
-// 中文官网：https://stylelint.cn/
 module.exports = {
   root: true,
   // 配置扩展

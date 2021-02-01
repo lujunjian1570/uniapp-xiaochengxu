@@ -2,10 +2,10 @@
  * eslint配置
  * @author: Lujunjian
  * @createTime: 2021-01-14 14:35:44
+ * eslint官网：http://eslint.cn/
+ * eslint-plugin-vue官网：https://eslint.vuejs.org
  */
 
-// eslint：http://eslint.cn/
-// eslint-plugin-vue：https://eslint.vuejs.org
 module.exports = {
   root: true,
   // 此项是用来指定eslint解析器的，解析器必须符合规则，babel-eslint解析器是对babel解析器的包装使其与ESLint解析
@@ -124,7 +124,7 @@ module.exports = {
     'no-var': 2,
     // 强制模板字符串中空格的使用（禁止花括号内出现空格）
     'template-curly-spacing': 2,
-    // 关闭 强制数组方法的回调函数中有 return 语句 
+    // 关闭 强制数组方法的回调函数中有 return 语句
     'array-callback-return': 0
   }
 }
