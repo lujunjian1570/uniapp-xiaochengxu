@@ -31,20 +31,15 @@ export default {
   },
   data() {
     return {
-      cWidth: '',
-      cHeight: '',
+      cWidth: uni.upx2px(375),
+      cHeight: uni.upx2px(300),
       pixelRatio: 1
     }
   },
   mounted() {
-    this.cWidth = uni.upx2px(375)
-    this.cHeight = uni.upx2px(300)
-    this.getServerData()
+    this.showRing(this.obj)
   },
   methods: {
-    getServerData() {
-      this.showRing(this.obj)
-    },
     showRing(chartData) {
       for (let i = 0; i < chartData.series.length; i++) {
         chartData.series[i].format = () => {

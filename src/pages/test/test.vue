@@ -2,7 +2,7 @@
   <view class="content">
     <image
       class="logo"
-      src="@/static/logo.png"
+      src="@/static/images/tabbar/my.png"
     />
     <view>
       <view class="title">

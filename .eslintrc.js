@@ -123,6 +123,8 @@ module.exports = {
     // 要求使用 let 或 const 而不是 var
     'no-var': 2,
     // 强制模板字符串中空格的使用（禁止花括号内出现空格）
-    'template-curly-spacing': 2
+    'template-curly-spacing': 2,
+    // 关闭 强制数组方法的回调函数中有 return 语句 
+    'array-callback-return': 0
   }
 }

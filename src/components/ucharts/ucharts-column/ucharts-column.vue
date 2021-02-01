@@ -31,22 +31,16 @@ export default {
   },
   data() {
     return {
-      cWidth: '',
-      cHeight: '',
-      pixelRatio: 1,
-      serverData: ''
+      cWidth: uni.upx2px(375),
+      cHeight: uni.upx2px(300),
+      pixelRatio: 1
     }
   },
   mounted() {
     // this.pixelRatio = uni.getSystemInfoSync().pixelRatio;
-    this.cWidth = uni.upx2px(375)
-    this.cHeight = uni.upx2px(300)
-    this.getServerData()
+    this.showColumn(this.obj)
   },
   methods: {
-    getServerData() {
-      this.showColumn(this.obj)
-    },
     showColumn(chartData) {
       new uCharts({
         $this: this,
@@ -95,7 +89,7 @@ export default {
 
 <style>
   /* 样式的width和height一定要与定义的cWidth和cHeight相对应 */
-  .charts {
+  .charts{
     width: 375rpx;
     height: 300rpx;
     background-color: #fff;
