@@ -1,9 +1,12 @@
 <template>
   <view>
-    <image src="../../../static/images/tabbar/index.png" />
+    <image src="@/static/images/tabbar/index.png" />
     <navigator url="../../subIndex/list/list">
       跳转到分包
     </navigator>
+    <button @click="goTo">
+      js形式跳转到分包页面
+    </button>
   </view>
 </template>
 
@@ -12,6 +15,11 @@ export default {
   data() {
     return {
 
+    }
+  },
+  methods:{
+    goTo() {
+      uni.navigateTo({ url:'../../subIndex/list/list' })
     }
   }
 }

@@ -15,5 +15,5 @@ export default {
 
 <style lang="scss">
   /* 全局样式 */
-  @import "@/styles/index.scss";
+  @import "~@/styles/index";
 </style>

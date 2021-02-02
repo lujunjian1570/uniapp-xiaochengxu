@@ -1629,6 +1629,11 @@
   dependencies:
     "@types/node" "*"
 
+"@types/html5plus@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@types/html5plus/-/html5plus-1.0.1.tgz#12316597e42f6f87cb25b9c93860f57cd39b3906"
+  integrity sha512-ska1eyYbGO7zsru2KTjZ/CWtSjOXh92/K/QMdgSddkyr1ZplIybOzeS1u61scyxAKRvz6Yd9TRL+LQSBVyGUJw==
+
 "@types/http-proxy-middleware@*":
   version "0.19.3"
   resolved "https://registry.yarnpkg.com/@types/http-proxy-middleware/-/http-proxy-middleware-0.19.3.tgz#b2eb96fbc0f9ac7250b5d9c4c53aade049497d03"
@@ -1755,6 +1760,13 @@
   integrity sha512-7npvPKV+jINLu1SpSYVWG8KvyJBhBa8tmzMMdDoVc2pWUYHN8KIXlPJhjJ4LT97c4dXJA2SHL/q6ADbDriZN+Q==
   dependencies:
     source-map "^0.6.1"
+
+"@types/uni-app@^1.4.3":
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/@types/uni-app/-/uni-app-1.4.3.tgz#251c012bd2408b69bf501fe0dc8f76adb3b0576c"
+  integrity sha512-i2P+ARDpMWrAlubqp54LYBEAxZhPML3kHW9qLxwK7ZvInoI8xaYDDhqukp5xisBftVrZ7+jUa7spCDXy6qBMvQ==
+  dependencies:
+    vue "^2.6.8"
 
 "@types/unist@*", "@types/unist@^2.0.0", "@types/unist@^2.0.2":
   version "2.0.3"
@@ -11954,7 +11966,7 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
-vue@^2.6.11:
+vue@^2.6.11, vue@^2.6.8:
   version "2.6.12"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.12.tgz#f5ebd4fa6bd2869403e29a896aed4904456c9123"
   integrity sha512-uhmLFETqPPNyuLLbsKz6ioJ4q7AZHzD8ZVFNATNyICSZouqP2Sz0rotWQC8UNBF6VGSCs5abnKJoStA6JbCbfg==

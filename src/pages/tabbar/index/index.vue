@@ -37,7 +37,7 @@
       <view style="width: 200rpx; height: 200rpx;">
         <open-data type="userAvatarUrl" />
       </view>
-      <uni-rate value="1" />
+      <uni-rate value="2" />
     </view>
   </view>
 </template>
