@@ -43,7 +43,7 @@ export default {
     align-items: center;
     .login-out{
       margin-top: 100rpx;
-      width: 50%;
+      width: 80%;
       background: $uni-color-primary;
       color: #fff;
       border: 0;

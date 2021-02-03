@@ -5,7 +5,7 @@
  */
 
 const UNI_APP = {
-  BASE_API: 'http://mockhttp.cn/mock/test'
+  BASE_API: 'https://mockhttp.cn/mock/test'
 }
 
 module.exports = UNI_APP

@@ -20,6 +20,7 @@
         class="nx-input"
         placeholder-class
         placeholder="请输入手机号"
+        maxlength="11"
       >
       <input
         v-model="login.password"
@@ -63,13 +64,13 @@ export default {
   },
   methods: {
     // 当前登录按钮操作
-    async loginFunction() {
+    loginFunction() {
       let that = this
       if (!that.login.loginName) {
         this.$utils.toast('请输入手机号')
         return
       }
-      if (/^1[23456789]\d{9}$/.test(that.loginName)) {
+      if (!/^1[23456789]\d{9}$/.test(that.login.loginName)) {
         this.$utils.toast('请输入正确手机号')
         return
       }
@@ -77,24 +78,28 @@ export default {
         this.$utils.toast('请输入密码')
         return
       }
-      // this.$apis.postLogin(this.login).then(res => {
-      // 	uni.showToast({
-      // 		title: '登录成功！',
-      // 		icon: 'none'
-      // 	});
-      // 	that.$store.commit("SET_TOKEN", res.token);
 
-      const res = await this.$http.post(this.$api.get)
-      console.log(res)
-      this.$store.dispatch('user/setUserInfo',res)
       this.$utils.toast('登录成功')
-
+      this.$store.dispatch('user/setUserInfo',1)
       setTimeout(() => {
         uni.switchTab({
           url: '/pages/tabbar/index/index'
         })
       },1000)
-      // });
+
+      /* this.$http.post(this.$api.login,{
+        Username: this.login.loginName,
+        password: this.login.password
+      }).then(res => {
+        this.$utils.toast(JSON.stringify(res))
+        this.$store.dispatch('user/setUserInfo',res)
+        setTimeout(() => {
+          uni.switchTab({
+            url: '/pages/tabbar/index/index'
+          })
+        },1000)
+      }) */
+      // this.$utils.toast('登录成功')
     }
   }
 }
@@ -127,7 +132,7 @@ export default {
     margin-top: 30upx;
     border-radius: 100upx;
     padding: 20upx 40upx;
-    font-size: 36upx;
+    font-size: 28upx;
     box-sizing: content-box;
   }
   .nx-label{
@@ -139,7 +144,6 @@ export default {
   .nx-btn{
     background: $uni-color-primary;
     color: #fff;
-    border: 0;
     border-radius: 100upx;
     font-size: 32upx;
   }
@@ -147,7 +151,7 @@ export default {
     border: 0;
   }
   /* 按钮点击效果 */
-  .nx-btn.button-hover{
+  /* .nx-btn.button-hover{
     transform: translate(1upx, 1upx);
-  }
+  } */
 </style>

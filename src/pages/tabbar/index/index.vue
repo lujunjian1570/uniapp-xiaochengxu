@@ -170,7 +170,7 @@ export default {
     }
   },
   onLoad() {
-    this.getStr()
+    // this.getStr()
     // 柱状图数据
     let d = [{
         key: '到岗',

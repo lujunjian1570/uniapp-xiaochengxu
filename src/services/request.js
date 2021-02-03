@@ -33,7 +33,7 @@ export default {
       uni.request({
         url: baseUrl + url,
         data: Object.assign({}, data, {
-          appId: 1
+          // appId: 1
         }),
         method: 'POST',
         header: {
@@ -53,10 +53,10 @@ export default {
   },
   parseData: function(succ, error, result) {
     if (result.statusCode === 200) {
-      if (result.data.msgCode === '10000') {
-        succ(result.data.result)
+      if (result.data.code === 0) {
+        succ(result.data)
       } else {
-        _this.$utils.toast(result.data.msgInfo)
+        _this.$utils.toast(result.data.msg)
         error(result.data)
       }
     } else {

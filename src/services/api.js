@@ -6,5 +6,6 @@
 
 export default {
   get: '/getStr1', // 获取信息
+  login: '/user/login'
 
 }

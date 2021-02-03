@@ -47,7 +47,9 @@
             },
             "ios" : {},
             /* ios打包配置 */
-            "sdkConfigs" : {}
+            "sdkConfigs" : {
+                "ad" : {}
+            }
         }
     },
     /* SDK配置 */
@@ -73,7 +75,7 @@
         "devServer" : {
             "proxy" : {
                 "/test" : {
-                    "target" : "http://mockhttp.cn/mock/test",
+                    "target" : "https://mockhttp.cn/mock/test",
                     "changeOrigin" : true,
                     "secure" : false,
                     "pathRewrite" : {
