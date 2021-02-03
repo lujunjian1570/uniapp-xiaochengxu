@@ -1,14 +1,48 @@
 <template>
   <view class="cantainer">
+    <view class="top">
+      食安管理平台
+    </view>
     <view class="box">
       <view class="item">
+        <view class="title">
+          晨检记录
+        </view>
         <ucharts-ring :obj="cjjl" />
       </view>
       <view class="item">
+        <view class="title-center">
+          出勤统计
+        </view>
         <ucharts-column :obj="cqtj" />
       </view>
     </view>
-    <view class="box">
+    <view class="bottom">
+      <view class="title">
+        投诉统计
+      </view>
+      <view class="cont">
+        <view class="item">
+          <view class="num">
+            10600
+          </view>
+          投诉总数
+        </view>
+        <view class="item">
+          <view class="num">
+            200
+          </view>
+          未处理总数
+        </view>
+        <view class="item">
+          <view class="num">
+            1000
+          </view>
+          已处理总数
+        </view>
+      </view>
+    </view>
+    <!--<view class="box">
       <view class="item">
         <ucharts-ring :obj="ncjc" />
       </view>
@@ -38,7 +72,7 @@
         <open-data type="userAvatarUrl" />
       </view>
       <uni-rate value="2" />
-    </view>
+    </view>-->
   </view>
 </template>
 
@@ -65,7 +99,7 @@ export default {
         categories: ['到岗', '轮休', '病假', '事假'],
         series: [{
           'data': [
-            45, {
+            1, {
               'value': 61,
               'color': '#f04864'
             },
@@ -140,7 +174,7 @@ export default {
     // 柱状图数据
     let d = [{
         key: '到岗',
-        value: 26
+        value: 1
       }, {
         key: '轮休',
         value: 86
@@ -180,11 +214,62 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .top{
+    padding: 160rpx 0 200rpx 0;
+    background-color: $uni-color-primary;
+    color: #fff;
+    text-align: center;
+    font-size: 50rpx;
+  }
   .box{
     display: flex;
+    padding: 10px 0 4rpx 0;
     .item{
       width: 375rpx;
-      height: 300rpx;
+      .title{
+        padding: 10rpx 0 10px 20rpx;
+        font-size: 28rpx;
+        font-weight: bold;
+        color: #666;
+      }
+      .title-center{
+        padding: 40rpx 0 0 0;
+        font-size: 26rpx;
+        color: #666;
+        text-align: center;
+      }
+    }
+  }
+  .bottom{
+    border-top: 1px solid #eee;
+    .title{
+      padding: 20rpx;
+      font-size: 28rpx;
+      font-weight: bold;
+      color: #666;
+    }
+    .cont{
+      display: flex;
+      padding: 0 10rpx;
+      .item{
+        flex: 1;
+        padding: 20rpx 0;
+        margin: 0 10rpx;
+        text-align: center;
+        color: #fff;
+        border-radius: 10rpx;
+        background: $uni-color-primary;
+        .num{
+          font-size: 40rpx;
+          padding-bottom: 10rpx;
+        }
+      }
+      .item:nth-child(2){
+        background: #ffad00;
+      }
+      .item:nth-child(3){
+        background: #00cf83;
+      }
     }
   }
 </style>

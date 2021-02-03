@@ -1,8 +1,6 @@
 <template>
-  <view>
-    <view style="height: 1000rpx;">
-      2
-    </view>
+  <view style="padding: 30rpx; text-align: center;">
+    工作台
   </view>
 </template>
 

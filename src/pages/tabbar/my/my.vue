@@ -1,11 +1,14 @@
 <template>
-  <view>
-    <image src="@/static/images/tabbar/index.png" />
-    <navigator url="../../subIndex/list/list">
-      跳转到分包
-    </navigator>
-    <button @click="goTo">
-      js形式跳转到分包页面
+  <view class="content">
+    <view style="width: 200rpx; height: 200rpx;">
+      <open-data type="userAvatarUrl" />
+    </view>
+    <open-data type="userNickName" />
+    <button
+      class="login-out"
+      @click="loginOut"
+    >
+      退出
     </button>
   </view>
 </template>
@@ -17,17 +20,35 @@ export default {
 
     }
   },
-  methods:{
-    goTo() {
-      uni.navigateTo({ url:'../../subIndex/list/list' })
+  methods: {
+    loginOut() {
+      uni.removeStorageSync('userInfo')
+      uni.reLaunch({
+        url: '/pages/login/login'
+      })
     }
+
   }
 }
 </script>
 
-<style lang="scss">
-  image{
-    width: 50rpx;
-    height: 50rpx;
+<style lang="scss" scoped>
+  .content{
+    font-size: 28rpx;
+    padding: 30rpx;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .login-out{
+      margin-top: 100rpx;
+      width: 50%;
+      background: $uni-color-primary;
+      color: #fff;
+      border: 0;
+      border-radius: 100upx;
+      font-size: 32upx;
+    }
   }
 </style>

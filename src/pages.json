@@ -1,6 +1,20 @@
 {
   "pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
     {
+      "path": "pages/guide/guide",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": false
+      }
+
+    },{
+      "path": "pages/login/login",
+      "style": {
+        "navigationBarTitleText": "登录",
+        "enablePullDownRefresh": false
+      }
+
+    },{
       "path": "pages/tabbar/index/index",
       "style": {
         "enablePullDownRefresh": false
@@ -32,13 +46,6 @@
         "enablePullDownRefresh": false
       }
 
-    }, {
-      "path": "pages/login/login",
-      "style": {
-        "navigationBarTitleText": "登录",
-        "enablePullDownRefresh": false
-      }
-
     }
   ],
   "subPackages": [{
@@ -54,7 +61,7 @@
   "globalStyle": {
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "食堂管理端",
-    "navigationBarBackgroundColor": "#0088FF",
+    "navigationBarBackgroundColor": "#2CB7FE",
     "backgroundColor": "#fff"
   },
   "tabBar": {

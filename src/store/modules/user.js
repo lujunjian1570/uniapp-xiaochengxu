@@ -14,6 +14,7 @@ export default {
   mutations: {
     SET_USER_INFO: (state, userInfo) => {
       state.userInfo = userInfo
+      uni.setStorageSync('userInfo', userInfo)
     }
   },
   actions: {
