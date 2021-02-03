@@ -65,16 +65,15 @@ export default {
   methods: {
     // 当前登录按钮操作
     loginFunction() {
-      let that = this
-      if (!that.login.loginName) {
+      if (!this.login.loginName) {
         this.$utils.toast('请输入手机号')
         return
       }
-      if (!/^1[23456789]\d{9}$/.test(that.login.loginName)) {
+      if (!this.$validates.PhoneNum(this.login.loginName)) {
         this.$utils.toast('请输入正确手机号')
         return
       }
-      if (!that.login.password) {
+      if (!this.login.password) {
         this.$utils.toast('请输入密码')
         return
       }

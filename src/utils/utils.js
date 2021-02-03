@@ -7,7 +7,13 @@
 // import Vue from 'vue'
 // const _this = Vue.prototype
 const utilsSelf = module.exports = {
-  // toast提示
+  /**
+   * toast提示
+   * @param title
+   * @param duration
+   * @param mask
+   * @param icon
+   */
   toast: (title, duration = 1500, mask = false, icon = 'none') => {
     if (Boolean(title) === false) {
       return
@@ -19,7 +25,9 @@ const utilsSelf = module.exports = {
       icon
     })
   },
-  // 用utilsSelf可以调用里面的方法
+  /**
+   * 测试（用utilsSelf可以调用里面的方法）
+   */
   test: () => {
     utilsSelf.toast('test')
   }

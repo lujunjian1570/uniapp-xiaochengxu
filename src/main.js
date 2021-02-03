@@ -11,10 +11,12 @@ import store from './store'
 import Api from '@/services/api.js'
 import Request from '@/services/request.js'
 import Utils from '@/utils/utils.js'
+import Validates from '@/utils/validates'
 
 Vue.prototype.$api = Api
 Vue.prototype.$http = Request
 Vue.prototype.$utils = Utils
+Vue.prototype.$validates = Validates
 
 Vue.config.productionTip = false
 
