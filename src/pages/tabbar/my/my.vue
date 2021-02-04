@@ -22,12 +22,13 @@ export default {
   },
   methods: {
     loginOut() {
-      uni.removeStorageSync('userInfo')
-      uni.reLaunch({
-        url: '/pages/login/login'
+      this.$utils.showModal('确定退出吗？',() => {
+        uni.removeStorageSync('userInfo')
+        uni.reLaunch({
+          url: '/pages/login/login'
+        })
       })
     }
-
   }
 }
 </script>

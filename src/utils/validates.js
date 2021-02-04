@@ -1,3 +1,8 @@
+/**
+  * 验证文件
+  * @author: Lujunjian
+  * @createTime: 2021-02-03 16:53:37
+*/
 export default {
   /* 调用方式:
   let A = 15398031234

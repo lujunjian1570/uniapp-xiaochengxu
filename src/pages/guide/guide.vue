@@ -8,16 +8,6 @@ export default {
     return {
 
     }
-  },
-  methods:{
-
   }
 }
 </script>
-
-<style lang="scss">
-  image{
-    width: 50rpx;
-    height: 50rpx;
-  }
-</style>

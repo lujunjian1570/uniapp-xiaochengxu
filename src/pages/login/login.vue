@@ -66,19 +66,19 @@ export default {
     // 当前登录按钮操作
     loginFunction() {
       if (!this.login.loginName) {
-        this.$utils.toast('请输入手机号')
+        this.$utils.showToast('请输入手机号')
         return
       }
       if (!this.$validates.PhoneNum(this.login.loginName)) {
-        this.$utils.toast('请输入正确手机号')
+        this.$utils.showToast('请输入正确手机号')
         return
       }
       if (!this.login.password) {
-        this.$utils.toast('请输入密码')
+        this.$utils.showToast('请输入密码')
         return
       }
 
-      this.$utils.toast('登录成功')
+      this.$utils.showToast('登录成功')
       this.$store.dispatch('user/setUserInfo',1)
       setTimeout(() => {
         uni.switchTab({
@@ -90,15 +90,14 @@ export default {
         Username: this.login.loginName,
         password: this.login.password
       }).then(res => {
-        this.$utils.toast(JSON.stringify(res))
+        this.$utils.showToast('登录成功')
         this.$store.dispatch('user/setUserInfo',res)
         setTimeout(() => {
           uni.switchTab({
             url: '/pages/tabbar/index/index'
           })
-        },1000)
-      }) */
-      // this.$utils.toast('登录成功')
+        },500)
+      })*/
     }
   }
 }

@@ -12,7 +12,7 @@ const baseUrl = process.uniEnv.BASE_API
 export default {
   post: function(url, data, hideLoading) {
     const $that = this
-    if (!hideLoading) uni.showLoading({ title: '加载中' })
+    if (!hideLoading) _this.$utils.showLoading()
     // 获取网络类型
     uni.getNetworkType({
       success: function(res) {
@@ -24,7 +24,7 @@ export default {
 					ethernet	有线网络	App
 					unknown	Android 下不常见的网络类型
 					none	无网络 */
-          _this.$utils.toast('当前无网络')
+          _this.$utils.showToast('当前无网络')
           return false
         }
       }
@@ -41,11 +41,11 @@ export default {
           token: uni.getStorageSync('token')
         },
         success: function(result) {
-          if (!hideLoading) uni.hideLoading()
+          if (!hideLoading) _this.$utils.hideLoading()
           $that.parseData(succ, error, result)
         },
         fail: function(e) {
-          if (!hideLoading) uni.hideLoading()
+          if (!hideLoading) _this.$utils.hideLoading()
           error(e)
         }
       })
@@ -56,7 +56,7 @@ export default {
       if (result.data.code === 0) {
         succ(result.data)
       } else {
-        _this.$utils.toast(result.data.msg)
+        _this.$utils.showToast(result.data.msg)
         error(result.data)
       }
     } else {
