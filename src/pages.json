@@ -1,63 +1,68 @@
 {
-  "pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+  "pages": [
+    //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+    {
+      "path": "pages/tabbar/work/work",
+      "style": {
+        "navigationBarTitleText": "工作台",
+        "enablePullDownRefresh": false
+      }
+    },
     {
       "path": "pages/guide/guide",
       "style": {
         "navigationBarTitleText": "",
         "enablePullDownRefresh": false
       }
-
-    },{
+    },
+    {
       "path": "pages/login/login",
       "style": {
         "navigationBarTitleText": "登录",
         "enablePullDownRefresh": false
       }
-
-    },{
+    },
+    {
       "path": "pages/tabbar/index/index",
       "style": {
         "enablePullDownRefresh": false
       }
-
-    }, {
+    },
+    {
       "path": "pages/tabbar/my/my",
       "style": {
         "navigationBarTitleText": "我的",
         "enablePullDownRefresh": false
       }
-
-    }, {
-      "path": "pages/tabbar/work/work",
-      "style": {
-        "navigationBarTitleText": "工作台",
-        "enablePullDownRefresh": false
-      }
-
-    }, {
+    },
+    {
       "path": "pages/index/index",
       "style": {
         "navigationBarTitleText": "首页"
       }
-    }, {
+    },
+    {
       "path": "pages/test/test",
       "style": {
         "navigationBarTitleText": "测试",
         "enablePullDownRefresh": false
       }
-
     }
   ],
-  "subPackages": [{
-    "root": "pages/subIndex",
-    "pages": [{
-      "path": "list/list",
-      "style": {
-        "navigationBarTitleText": "分包list",
-        "enablePullDownRefresh": false
-      }
-    }]
-  }],
+  "subPackages": [
+    {
+      "root": "pages/subIndex",
+      "pages": [
+        {
+          "path": "list/list",
+          "style": {
+            "navigationBarTitleText": "分包list",
+            "enablePullDownRefresh": false
+          }
+        }
+      ]
+    }
+  ],
   "globalStyle": {
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "食堂管理端",
@@ -68,7 +73,8 @@
     "color": "#333",
     "selectedColor": "#0088FF",
     "backgroundColor": "#F6F6F6",
-    "list": [{
+    "list": [
+      {
         "pagePath": "pages/tabbar/index/index",
         "text": "简报",
         "iconPath": "static/images/tabbar/index.png",
@@ -89,8 +95,8 @@
     ]
   },
   "easycom": {
-    "autoscan": true, // 是否自动扫描组件
-    "custom": { // 自定义扫描规则
+    "autoscan": true,
+    "custom": {
       "^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue",
       "^ucharts-(.*)": "@/components/ucharts/ucharts-$1/ucharts-$1.vue"
     }

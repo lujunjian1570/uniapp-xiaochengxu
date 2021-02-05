@@ -10,7 +10,7 @@ const _this = Vue.prototype
 const baseUrl = process.uniEnv.BASE_API
 
 export default {
-  post: function(url, data, hideLoading) {
+  post: function(url, data = {}, hideLoading) {
     const $that = this
     if (!hideLoading) _this.$utils.showLoading()
     // 获取网络类型

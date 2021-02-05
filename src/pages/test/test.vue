@@ -53,7 +53,7 @@ export default {
     }
   },
   computed: {
-    ...mapState('home',[
+    ...mapState('user',[
       'userInfo'
     ]),
     ...mapGetters([
