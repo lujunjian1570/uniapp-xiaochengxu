@@ -53,7 +53,7 @@ export default {
   },
   parseData: function(succ, error, result) {
     if (result.statusCode === 200) {
-      if (result.data.code === 0) {
+      if (result.data.code === '10000') {
         succ(result.data)
       } else {
         _this.$utils.showToast(result.data.msg)

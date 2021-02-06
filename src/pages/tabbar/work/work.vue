@@ -12,7 +12,7 @@
         :key="index"
         class="item"
       >
-        {{ `${index + 1}、${item.value}` }}
+        {{ `${index + 1}、${item.text}` }}
       </view>
     </view>
   </view>
@@ -25,13 +25,13 @@ export default {
       text: '',
       list: [
         {
-          value: '测试数据'
+          text: '测试数据'
         }
       ]
     }
   },
   onLoad() {
-    // this.getData()
+    this.getData()
   },
   methods: {
     /**
@@ -42,22 +42,23 @@ export default {
         this.$utils.showToast('请输入数据')
         return
       }
-      this.list.push({
-        value: this.text
-      })
-      this.text = ''
-      // this.$http.post(this.$api.submit, { text: this.text }).then(res => {
-      //   console.log(res)
-      //   this.text = ''
-      //   this.getData()
+      // this.list.push({
+      //   value: this.text
       // })
+      // this.text = ''
+
+      this.$http.post(this.$api.submit, { text: this.text }).then(res => {
+        console.log(res)
+        this.text = ''
+        this.getData()
+      })
     },
     /**
      * 获取数据
      */
     getData() {
       this.$http.post(this.$api.getData).then(res => {
-        this.list = res.data
+        this.list = res.data.reverse()
       })
     }
   }

@@ -7,6 +7,7 @@
 export default {
   get: '/getStr1', // 获取信息
   login: '/user/login',
-  getImg: '/getImg'
+  submit: '/test/submit',
+  getData: '/test/getData'
 
 }

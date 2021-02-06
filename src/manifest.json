@@ -81,7 +81,7 @@
     "devServer": {
       "proxy": {
         "/user": {
-          "target": "http://192.168.10.51:8081/user",
+          "target": "http://192.168.10.51:8089/test",
           "changeOrigin": true,
           "secure": false,
           "pathRewrite": {

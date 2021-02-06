@@ -1,6 +1,6 @@
 <template>
   <view class="content">
-    <view style="width: 200rpx; height: 200rpx;">
+    <view class="head">
       <open-data type="userAvatarUrl" />
     </view>
     <open-data type="userNickName" />
@@ -35,13 +35,20 @@ export default {
 
 <style lang="scss" scoped>
   .content{
-    font-size: 28rpx;
+    font-size: 32rpx;
     padding: 30rpx;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    .head{
+      width: 200rpx;
+      height: 200rpx;
+      margin-bottom: 20rpx;
+      border-radius: 100rpx;
+      overflow: hidden;
+    }
     .login-out{
       margin-top: 100rpx;
       width: 80%;
