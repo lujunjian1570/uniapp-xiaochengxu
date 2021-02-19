@@ -3,7 +3,8 @@
     <input
       v-model="text"
       placeholder="请输入数据"
-    ><button @click="submit">
+    >
+    <button @click="submit">
       提交
     </button>
     <view class="box">
@@ -31,7 +32,7 @@ export default {
     }
   },
   onLoad() {
-    this.getData()
+    // this.getData()
   },
   methods: {
     /**
