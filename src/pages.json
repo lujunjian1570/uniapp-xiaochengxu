@@ -5,7 +5,7 @@
       "path": "pages/tabbar/work/work",
       "style": {
         "navigationBarTitleText": "工作台",
-        "enablePullDownRefresh": false
+        "enablePullDownRefresh": true
       }
     },
     {
@@ -57,7 +57,7 @@
           "path": "list/list",
           "style": {
             "navigationBarTitleText": "分包list",
-            "enablePullDownRefresh": false
+            "enablePullDownRefresh": true
           }
         }
       ]

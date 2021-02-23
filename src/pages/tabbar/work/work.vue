@@ -1,5 +1,12 @@
 <template>
   <view class="wrap">
+    <mz-network-error />
+    <!--<button
+      type="default"
+      @click="goTo"
+    >
+      跳转
+    </button>
     <input
       v-model="text"
       placeholder="请输入数据"
@@ -15,7 +22,16 @@
       >
         {{ `${index + 1}、${item.text}` }}
       </view>
+    </view>-->
+
+    <view
+      v-for="(item, index) in list"
+      :key="index"
+      class="item"
+    >
+      {{ item }}
     </view>
+    <uni-load-more :status="more" />
   </view>
 </template>
 
@@ -25,16 +41,55 @@ export default {
     return {
       text: '',
       list: [
-        {
+        /* {
           text: '测试数据'
-        }
-      ]
+        }*/
+      ],
+      current: 0,
+      pageSize: 10,
+      total: 0,
+      more: 'more'
     }
   },
   onLoad() {
     // this.getData()
+    let routes = getCurrentPages() // 获取当前打开过的页面路由数组
+    let curRoute = routes[routes.length - 1].route // 获取当前页面路由，也就是最后一个打开的页面路由
+    console.log(curRoute)
+
+    this.getList()
+  },
+  onPullDownRefresh() {
+    console.log('refresh')
+    this.list = []
+    this.current = 0
+    this.getList()
+  },
+  onReachBottom() {
+    console.log('bottom')
+    this.getList()
   },
   methods: {
+    getList() {
+      this.total = 3
+      this.current++
+      this.more = 'loading'
+      if(this.current <= this.total) {
+        for (let i = 0; i < 10; i++) {
+          this.list.push(i)
+        }
+      }else {
+        this.more = 'noMore'
+      }
+      setTimeout(function() {
+        uni.stopPullDownRefresh()
+      }, 1000)
+    },
+    goTo() {
+      uni.navigateTo({
+        url: '/pages/subIndex/list/list'
+      })
+    },
     /**
      * 提交数据
      */
@@ -70,7 +125,7 @@ export default {
   .wrap{
     display: flex;
     flex-direction: column;
-    padding: 30rpx;
+    /* padding: 30rpx; */
     input{
       display: block;
       width: 100%;
@@ -96,6 +151,10 @@ export default {
       .item{
         font-size: 28rpx;
       }
+    }
+    .item{
+      padding: 50rpx 30rpx;
+      border-bottom: 1rpx solid #eee;
     }
   }
 </style>
