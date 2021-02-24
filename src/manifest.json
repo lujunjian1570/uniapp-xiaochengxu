@@ -63,7 +63,7 @@
   /* 快应用特有相关 */
   "mp-weixin": {
     /* 微信小程序特有相关 */
-    "appid": "wxf709babdc1c3d51c",
+    "appid": "wxca4cdd90b57be793",
     "setting": {
       "urlCheck": false,
       "minified": true,
@@ -71,11 +71,7 @@
       "postcss": true
     },
     "usingComponents": true,
-    "permission": {
-      "scope.userLocation": {
-        "desc": "需要访问位置"
-      }
-    }
+    "permission": {}
   },
   "h5": {
     "devServer": {

@@ -15,7 +15,8 @@ export default {
         if (res.hasUpdate) {
           // 请求完新版本信息的回调
           updateManager.onUpdateReady(function() {
-            uni.showModal({
+            updateManager.applyUpdate()
+            /* uni.showModal({
               title: '更新提示',
               content: '新版本已经准备好，是否重启应用？',
               success: function(res) {
@@ -24,7 +25,7 @@ export default {
                   updateManager.applyUpdate()
                 }
               },
-            })
+            })*/
           })
           updateManager.onUpdateFailed(function() {
             uni.showModal({

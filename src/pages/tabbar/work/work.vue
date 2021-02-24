@@ -48,7 +48,7 @@ export default {
       current: 0,
       pageSize: 10,
       total: 0,
-      more: 'more'
+      more: 'loading'
     }
   },
   onLoad() {
@@ -61,7 +61,6 @@ export default {
   },
   onPullDownRefresh() {
     console.log('refresh')
-    this.list = []
     this.current = 0
     this.getList()
   },
@@ -71,17 +70,26 @@ export default {
   },
   methods: {
     getList() {
-      this.total = 3
       this.current++
-      this.more = 'loading'
-      if(this.current <= this.total) {
-        for (let i = 0; i < 10; i++) {
-          this.list.push(i)
-        }
-      }else {
-        this.more = 'noMore'
+      if(this.current === 1) {
+        this.more = 'loading'
       }
-      setTimeout(function() {
+      // 模拟调用接口
+      setTimeout(() => {
+        this.total = 2
+        if(this.total >= this.current) {
+          if(this.current === 1) {
+            this.list = []
+          }
+          if(this.current === this.total) {
+            this.more = 'noMore'
+          }
+          for (let i = 0; i < 10; i++) {
+            this.list.push(i)
+          }
+        }else { // 无数据
+          this.more = 'noMore'
+        }
         uni.stopPullDownRefresh()
       }, 1000)
     },
