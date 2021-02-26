@@ -52,6 +52,7 @@ export default {
 </script>
 
 <style lang="scss">
+  @import "~uview-ui/index.scss";
   /* 全局样式 */
   @import "~@/styles/index";
 </style>
